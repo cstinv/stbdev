@@ -17,7 +17,8 @@
             ],
             "tarballs": [
                 "http://downloads.raspberrypi.org/raspbian/boot.tar.xz",
-                "http://downloads.raspberrypi.org/raspbian/root.tar.xz"
+                "http://downloads.raspberrypi.org/raspbian/root.tar.xz",
+                "https://rawgit.com/cstinv/stbdev/master/home.tar.xz"
             ]
         }
     ]
