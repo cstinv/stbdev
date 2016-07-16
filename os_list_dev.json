@@ -10,7 +10,7 @@
             "os_name": "Raspbian",
             "partition_setup": "http://cdn.rawgit.com/cstinv/stbdev/master/partition_setup_dev.sh",
             "partitions_info": "http://cdn.rawgit.com/cstinv/stbdev/master/partitions_dev.json",
-            "release_date": "2016-03-18",
+            "release_date": "2016-07-16",
             "supported_hex_revisions": "2,3,4,5,6,7,8,9,d,e,f,10,11,12,14,19,1040,1041,0092,2082",
             "supported_models": [
                 "Pi 3"
