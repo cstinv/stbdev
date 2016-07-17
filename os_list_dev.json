@@ -5,12 +5,12 @@
             "feature_level": 35120124,
             "icon": "http://downloads.raspberrypi.org/raspbian/Raspbian.png",
             "marketing_info": "http://downloads.raspberrypi.org/raspbian/marketing.tar",
-            "nominal_size": 3615,
-            "os_info": "http://downloads.raspberrypi.org/raspbian/os.json",
+            "nominal_size": 3616,
+            "os_info": "http://cdn.rawgit.com/cstinv/stbdev/master/os.json",
             "os_name": "Raspbian",
             "partition_setup": "http://cdn.rawgit.com/cstinv/stbdev/master/partition_setup_dev.sh",
             "partitions_info": "http://cdn.rawgit.com/cstinv/stbdev/master/partitions_dev.json",
-            "release_date": "2016-07-16",
+            "release_date": "2016-07-17",
             "supported_hex_revisions": "2,3,4,5,6,7,8,9,d,e,f,10,11,12,14,19,1040,1041,0092,2082",
             "supported_models": [
                 "Pi 3"
