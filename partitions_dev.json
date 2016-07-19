@@ -6,7 +6,7 @@
             "partition_size_nominal": 63,
             "uncompressed_tarball_size": 21,
             "want_maximised": false
-        },
+        }, 
         {
             "filesystem_type": "ext4",
             "label": "root",
