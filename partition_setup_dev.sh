@@ -2,16 +2,15 @@
 
 set -ex
 
-if [ -z "$part1" ] || [ -z "$part2" ] || [ -z "$part3" ]; then
-  printf "Error: missing environment variable part1 or part2 or part3\n" 1>&2
+if [ -z "$part1" ] || [ -z "$part2" ]; then
+  printf "Error: missing environment variable part1 or part2\n" 1>&2
   exit 1
 fi
 
-mkdir -p /tmp/1 /tmp/2 /tmp/3
+mkdir -p /tmp/1 /tmp/2
 
 mount "$part1" /tmp/1
 mount "$part2" /tmp/2
-mount "$part3" /tmp/3
 
 sed /tmp/1/cmdline.txt -i -e "s|root=/dev/[^ ]*|root=${part2}|"
 sed /tmp/2/etc/fstab -i -e "s|^.* / |${part2}  / |"
@@ -21,12 +20,8 @@ if ! grep -q resize /proc/cmdline; then
   sed -i 's/ quiet init=.*$//' /tmp/1/cmdline.txt
 fi
 
-cp -a /temp/2/home/* /tmp/3/
-echo "$part3 /home ext4 defaults,noatime,nodiratime 0 0" >> /tmp/2/etc/fstab
-
 
 umount /tmp/1
 umount /tmp/2
-umount /tmp/3
 
 
