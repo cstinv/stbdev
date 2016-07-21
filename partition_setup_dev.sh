@@ -21,6 +21,7 @@ if ! grep -q resize /proc/cmdline; then
   sed -i 's/ quiet init=.*$//' /tmp/1/cmdline.txt
 fi
 
+cp -a /temp/2/home/* /tmp/3/
 echo "$part3 /home ext4 defaults,noatime,nodiratime 0 0" >> /tmp/2/etc/fstab
 
 
