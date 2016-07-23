@@ -21,8 +21,8 @@ if ! grep -q resize /proc/cmdline; then
   sed -i 's/ quiet init=.*$//' /tmp/1/cmdline.txt
 fi
 
-cp /tmp/2/etc/init.d/apply* /tmp/3
-
+rm /etc/init.d/apply_noobs_os_config
+cp /tmp/3/init.stb/* /etc/init.d
 
 umount /tmp/1
 umount /tmp/2
