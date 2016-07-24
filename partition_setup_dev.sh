@@ -22,7 +22,7 @@ if ! grep -q resize /proc/cmdline; then
 fi
 
 rm /tmp/2/etc/init.d/apply_noobs_os_config
-cp /tmp/3/init_stb/* /tmp/2/etc/init.d
+cp /tmp/3/apply_noobs_os_config /tmp/2/etc/init.d
 
 rm -r /settings/cache/*
 umount /tmp/1
