@@ -1,10 +1,16 @@
 #! /bin/sh
 # Move home directory to separate data partition
 
+set -e 
+
 # Unmount home directory partition just in case
 homedir=$(df -h | grep -o "/media/pi/home.*")
-log_daemon_msg "STBDEV: home directory = $homedir"
-sudo umount $homedir
+if [[ -z $homedir ]]; then
+  echo "home directory not mounted"
+else
+  log_daemon_msg "STBDEV: Unmounting home directory $homedir"
+  sudo umount $homedir
+fi
 
 sudo mkdir /tmp/home
 sudo mount /dev/mmcblk0p8 /tmp/home

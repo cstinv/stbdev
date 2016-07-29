@@ -15,5 +15,11 @@ sudo wget https://github.com/cstinv/stbdev/raw/master/init_stb/init_home_directo
 chmod 774 init_home_directory.sh
 . /etc/init.d/init_home_directory.sh
 
+# Install tvheadned
+log_daemon_msg "STBDEV: Installing tvheadend on the STB"
+sudo wget https://github.com/cstinv/stbdev/raw/master/init_stb/install_tv_headend.sh
+chmod 774 install_tv_headend.sh
+. /etc/init.d/install_tv_headend.sh
+
 
 
