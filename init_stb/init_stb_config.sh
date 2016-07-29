@@ -1,6 +1,10 @@
 #! /bin/sh
 # Init stb config
 
+. /lib/lsb/init-functions
+
+set -x
+
 cd /etc/init.d
 
 # Init OS settings

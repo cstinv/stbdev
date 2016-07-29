@@ -1,12 +1,17 @@
 #! /bin/sh
 # Move home directory to separate data partition
 
-set -e 
+. /lib/lsb/init-functions
+
+#set -e
+set -x 
+
+log_daemon_msg "STBDEV: Starting init_home_directory"
 
 # Unmount home directory partition just in case
 homedir=$(df -h | grep -o "/media/pi/home.*")
 if [[ -z $homedir ]]; then
-  echo "home directory not mounted"
+  log_daemon_msg "STBDEV:home directory not mounted"
 else
   log_daemon_msg "STBDEV: Unmounting home directory $homedir"
   sudo umount $homedir
