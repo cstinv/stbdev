@@ -17,6 +17,6 @@ sudo wget https://github.com/cstinv/stbdev/raw/master/firmware/dvb-tuner-si2158-
 
 #Edit TV Headend parameters
 sudo cp -rp /home/hts/.hts /home/pi/
-sudo chown pi:pi /home/pi/.hts/tvheadend/superuser
+sudo chown -R pi:pi /home/pi/.hts
 sudo sed -i "s|TVH_USER=.*|TVH_USER=\"pi\"|" /etc/default/tvheadend
 
