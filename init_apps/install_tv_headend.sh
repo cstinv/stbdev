@@ -20,3 +20,4 @@ sudo cp -rp /home/hts/.hts /home/pi/
 sudo chown -R pi:pi /home/pi/.hts
 sudo sed -i "s|TVH_USER=.*|TVH_USER=\"pi\"|" /etc/default/tvheadend
 
+
