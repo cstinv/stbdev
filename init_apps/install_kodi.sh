@@ -35,5 +35,8 @@ sudo usermod -a -G tty pi
 #Edit /boot/config.txt for Full HD support
 sudo sh -c "echo '  ' >> /boot/config.txt"
 sudo sh -c "echo '# Full HD support' >> /boot/config.txt"
-sudo sh -c "echo 'gpu_mem=160' >> /boot/config.txt"
+sudo sh -c "echo 'gpu_mem=256' >> /boot/config.txt"
+sudo sh -c "echo '  ' >> /boot/config.txt"
+sudo sh -c "echo '# MPG2 sw decoding' >> /boot/config.txt"
+sudo sh -c "echo 'start_x=1' >> /boot/config.txt"
 
