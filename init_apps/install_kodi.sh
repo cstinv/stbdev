@@ -5,8 +5,16 @@
 
 set -x
 
-sudo apt-get -y update
-sudo apt-get -y install kodi
+# Add sources to /etc/apt/sources.list
+sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/jessie/main/binary /' >> /etc/apt/sources.list
+sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/jessie/armv7/binary /' >> /etc/apt/sources.list
+
+# Get the key for the sources
+wget -O - http://pipplware.pplware.pt/pipplware/key.asc | sudo apt-key add -
+
+
+sudo apt-get update && sudo apt-get dist-upgrade
+sudo apt-get install kodi
 
 # Create /etc/udev/rules.d/99-input.rules file
 sudo sh -c "echo 'SUBSYSTEM==input, GROUP=input, MODE=0660' > /etc/udev/rules.d/99-input.rules"
