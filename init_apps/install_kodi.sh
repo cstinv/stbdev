@@ -32,7 +32,6 @@ sudo sh -c "echo '# vchiq' >> /etc/udev/rules.d/10-permissions.rules"
 sudo sh -c "echo 'SUBSYSTEM==vchiq,  GROUP=video, MODE=0660' >> /etc/udev/rules.d/10-permissions.rules"
 
 # Additional settings for user pi
-Run the following commands for user pi:
 sudo usermod -a -G audio pi
 sudo usermod -a -G video pi
 sudo usermod -a -G input pi
