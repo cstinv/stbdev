@@ -13,8 +13,8 @@ sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/jessie/armv7/b
 wget -O - http://pipplware.pplware.pt/pipplware/key.asc | sudo apt-key add -
 
 
-sudo apt-get update && sudo apt-get dist-upgrade
-sudo apt-get install kodi
+sudo apt-get -y update && sudo apt-get -y dist-upgrade
+sudo apt-get -y install kodi
 
 # Create /etc/udev/rules.d/99-input.rules file
 sudo sh -c "echo 'SUBSYSTEM==input, GROUP=input, MODE=0660' > /etc/udev/rules.d/99-input.rules"
