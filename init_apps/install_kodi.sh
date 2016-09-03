@@ -5,15 +5,6 @@
 
 set -x
 
-# Add sources to /etc/apt/sources.list
-sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/jessie/main/binary /' >> /etc/apt/sources.list
-sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/jessie/armv7/binary /' >> /etc/apt/sources.list
-
-# Get the key for the sources
-wget -O - http://pipplware.pplware.pt/pipplware/key.asc | sudo apt-key add -
-
-
-sudo apt-get -y update && sudo apt-get -y dist-upgrade
 sudo apt-get -y install kodi
 
 # Create /etc/udev/rules.d/99-input.rules file
