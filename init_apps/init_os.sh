@@ -26,7 +26,7 @@ sudo apt-get -y dist-upgrade
 # Get script to init the apps for STB
 log_daemon_msg "STBDEV: Get script for initializing STB apps"
 cd /home/pi
-sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/init_apps.sh
+sudo wget --no-check-certificate https://github.com/cstinv/stbdev/raw/master/init_apps/init_apps.sh
 sudo chmod 774 init_apps.sh
 sudo chown pi:pi init_apps.sh
 echo 'Reboot the raspberry and run init_apps.sh!!!'
