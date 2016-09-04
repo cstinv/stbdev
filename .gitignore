@@ -60,3 +60,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+#pfe backup files and version files
+*.$$$
+*.001
+*.002
+*.003

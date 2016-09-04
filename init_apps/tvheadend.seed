@@ -1,0 +1,3 @@
+tvheadend	tvheadend/admin_password	password	tvheadend
+tvheadend	tvheadend/admin_username	string	tvheadend
+tvheadend	tvheadend/webinterface	note	
