@@ -11,7 +11,7 @@ cd /home/pi
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_tvheadend.sh
 sudo chmod 774 install_tvheadend.sh
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/tvheadend.seed
-debconf-set-selections ./tvheadend.seed
+sudo debconf-set-selections ./tvheadend.seed
 . /home/pi/install_tvheadend.sh
 
 # Install kodi
