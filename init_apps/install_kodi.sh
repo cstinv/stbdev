@@ -38,3 +38,5 @@ sudo sh -c "echo '  ' >> /boot/config.txt"
 sudo sh -c "echo '# MPG2 sw decoding' >> /boot/config.txt"
 sudo sh -c "echo 'start_x=1' >> /boot/config.txt"
 
+# Install the KODI tvheadend addon
+sudo apt-get install kodi-pvr-hts

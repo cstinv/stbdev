@@ -18,8 +18,9 @@ wget -O - http://pipplware.pplware.pt/pipplware/key.asc | sudo apt-key add -
 
 # Get the key for tvheadend
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61 
-sudo apt-get -y install apt-transport-https
-echo "deb https://dl.bintray.com/tvheadend/deb jessie release" | sudo tee -a /etc/apt/sources.list
+sudo apt-add-repository "https://dl.bintray.com/tvheadend/deb release"
+#sudo apt-get -y install apt-transport-https
+#echo "deb https://dl.bintray.com/tvheadend/deb jessie release" | sudo tee -a /etc/apt/sources.list
 
 # Update raspberry firmware and software libraries
 sudo rpi-update
