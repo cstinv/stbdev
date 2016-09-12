@@ -5,9 +5,19 @@
 
 set -x
 
-sudo apt-get -y install tvheadend
+# Install preconfigured options for tvheadend
+sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/tvheadend.seed
+sudo debconf-set-selections ./tvheadend.seed
+
+# Install tvheadend software
+cd /home/pi
+sudo wget https://github.com/cstinv/stbdev/raw/master/tvheadend/tvheadend_4.0.9_armhf.deb
+sudo dpkg -i tvheadend_4.0.9_armhf.deb
+#sudo dpkg -i tvheadend_4.0.9_armhf.deb
+#sudo apt-get -y install tvheadend
+
+# Get the needed firmware
 cd /lib/firmware
-#sudo wget https://github.com/cstinv/stbdev/raw/master/firmware/dvb-demod-si2168-a20-01.fw
 sudo wget https://github.com/cstinv/stbdev/raw/master/firmware/dvb-demod-si2168-b40-01.fw
 sudo wget https://github.com/cstinv/stbdev/raw/master/firmware/dvb-tuner-si2158-a20-01.fw
 
