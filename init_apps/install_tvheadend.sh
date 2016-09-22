@@ -13,8 +13,7 @@ sudo debconf-set-selections ./tvheadend.seed
 cd /home/pi
 sudo wget https://github.com/cstinv/stbdev/raw/master/tvheadend/tvheadend_4.0.9_armhf.deb
 sudo dpkg -i tvheadend_4.0.9_armhf.deb
-#sudo dpkg -i tvheadend_4.0.9_armhf.deb
-#sudo apt-get -y install tvheadend
+sudo apt-get install -f
 
 # Get the needed firmware
 cd /lib/firmware
@@ -26,4 +25,7 @@ sudo cp -rp /home/hts/.hts /home/pi/
 sudo chown -R pi:pi /home/pi/.hts
 sudo sed -i "s|TVH_USER=.*|TVH_USER=\"pi\"|" /etc/default/tvheadend
 
-
+#Get the tvheadend init script
+cd /home/pi
+sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/tvh_createchannels.py
+echo "Run python tvh_createchannels.py to install TV channels"
