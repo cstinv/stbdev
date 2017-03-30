@@ -4,14 +4,14 @@ import json
 import sys
 import time
 
-HostIP="192.168.10.37"
-tvheadendURL="http://192.168.10.37:9981"
+HostIP="192.168.10.40"
+tvheadendURL="http://192.168.10.40:9981"
 tvhuser="tvheadend"
 tvhpass="tvheadend"
 
 passman = urllib2.HTTPPasswordMgrWithDefaultRealm()
 passman.add_password(None, tvheadendURL, tvhuser, tvhpass)
-authhandler = urllib2.HTTPBasicAuthHandler(passman)
+authhandler = urllib2.HTTPDigestAuthHandler(passman)
 opener = urllib2.build_opener(authhandler)
 urllib2.install_opener(opener)
 
@@ -28,12 +28,15 @@ def GetDvbtTuner(opener):
   adapters = json.loads(f.read())
 
   # Loop through adapters and look for dvb-t tuner
+  print "Loop through adapters"
   for adapter in adapters:
     data=urllib.urlencode({'uuid' : adapter['uuid']})
+    print "data="+data # DELETE
     req = urllib2.Request(GetAdaptersURL,data)
     f = opener.open(req)
     tuners = json.loads(f.read())
     for tuner in tuners:
+      print "Tuner = "+str(tuner['class']) #DELETE
       if tuner['class']=="linuxdvb_frontend_dvbt":
         return tuner
   return None
@@ -60,8 +63,9 @@ def AddDvbtNetwork(opener):
 
   confpars={}
   confpars['networkname']='DVBT'
-  confpars['autodiscovery']=True
+  confpars['autodiscovery']=2
   confpars['skipinitscan']=True
+  confpars['idlescan']=False
   confpars['scanfile']="dvbt/auto/dvb-t_auto-Default"
 
   data=urllib.urlencode({'class' : 'dvb_network_dvbt', 'conf' : json.dumps(confpars)})
@@ -80,6 +84,16 @@ def SetNodePars(opener,setpars):
   f = opener.open(req)
   pars = json.loads(f.read())
 
+# Force network scan
+def ForceScan(opener,setpars):
+  ForceScanURL="http://"+HostIP+":9981/api/mpegts/network/scan"
+
+  data=urllib.urlencode({'uuid' : setpars['uuid']})
+  print "data="+data   #DELETE
+  req = urllib2.Request(ForceScanURL,data)
+  f = opener.open(req)
+  pars = json.loads(f.read())
+  print "Force network scan parts="+str(pars)
 
 
 # Map services to channels
@@ -126,6 +140,12 @@ setpars['ota_epg']=True
 setpars['initscan']=True
 setpars['idlescan']=True
 SetNodePars(opener,setpars) 
+
+# Create JSON request to force a network scan
+print "Forcing scan on DVBT network"
+setpars={}
+setpars['uuid']="[\""+tuner['uuid']+"\"]"
+ForceScan(opener,setpars)
 
 #Wait for scan to complete
 print "Wait for network scan to complete"
