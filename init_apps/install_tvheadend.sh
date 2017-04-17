@@ -11,8 +11,8 @@ sudo debconf-set-selections ./tvheadend.seed
 
 # Install tvheadend software
 cd /home/pi
-sudo wget https://github.com/cstinv/stbdev/raw/master/tvheadend/tvheadend_4.0.9_armhf.deb
-sudo dpkg -i tvheadend_4.0.9_armhf.deb
+sudo wget https://github.com/cstinv/stbdev/raw/master/tvheadend/tvheadend_4.1-2483~gff5dfd4_armhf.deb
+sudo dpkg -i tvheadend_4.1-2483~gff5dfd4_armhf.deb
 sudo apt-get -y install -f
 
 # Get the needed firmware
