@@ -15,9 +15,9 @@ mount "$part3" /tmp/3
 
 sed /tmp/1/cmdline.txt -i -e "s|root=[^ ]*|root=${part2}|"
 
-sed /tmp/2/etc/fstab -i -e "s|^.* / |${part2}  / "
+sed /tmp/2/etc/fstab -i -e "s|^.* / |${part2}  / |"
 
-sed /tmp/2/etc/fstab -i -e "s|^.* /boot |${part1}  /boot "
+sed /tmp/2/etc/fstab -i -e "s|^.* /boot |${part1}  /boot |"
 
 if [ -f /mnt/ssh ]; then
   cp /mnt/ssh /tmp/1/
