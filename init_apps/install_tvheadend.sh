@@ -9,6 +9,7 @@ set -x
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/packages/ffmpeg_201704201959-git-1_armhf.deb
 sudo dpkg -i ffmpeg_201704201959-git-1_armhf.deb
 sudo apt-get -y install -f
+sudo apt-get -y install zvbi
 
 # Install preconfigured options for tvheadend
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/tvheadend.seed
