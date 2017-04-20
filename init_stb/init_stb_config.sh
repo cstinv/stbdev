@@ -27,4 +27,7 @@ sudo chmod 774 init_os.sh
 sudo chown pi:pi init_os.sh
 log_daemon_msg "STBDEV: Finalized scripts"
 
+# Enable ssh 
+sudo sh -c "echo '1' >> /boot/ssh"
+
 
