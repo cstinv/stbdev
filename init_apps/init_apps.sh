@@ -12,6 +12,13 @@ sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_tvheaden
 sudo chmod 774 install_tvheadend.sh
 . /home/pi/install_tvheadend.sh
 
+# Install DVB tools
+log_daemon_msg "STBDEV: Installing DVB tools on the STB"
+cd /home/pi
+sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_dvb_tools.sh
+sudo chmod 774 install_dvb_tools.sh
+. /home/pi/install_dvb_tools.sh
+
 # Install setup bash commands
 log_daemon_msg "STBDEV: Installing bash setup commands"
 cd /home/pi
