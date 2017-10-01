@@ -40,8 +40,8 @@ fi
 
 #cp /tmp/3/apply_noobs_os_config /tmp/2/etc/init.d
 cp /tmp/3/get_init_stb_config.sh /tmp/2/etc/init.d
-cp /tmp/3/apply_stb_config.service /tmp/2/lib/systemd/system
-
+rm /tmp/2/lib/systemd/system/apply_noobs_os_config.service
+cp /tmp/3/apply_noobs_os_config.service /tmp/2/lib/systemd/system
 umount /tmp/1
 umount /tmp/2
 umount /tmp/3
