@@ -36,8 +36,9 @@ if ! grep -q resize /proc/cmdline; then
   sed -i 's| quiet init=/usr/lib/raspi-config/init_resize.sh||' /tmp/1/cmdline.txt
 fi
 
-rm /tmp/2/etc/init.d/apply_noobs_os_config
-cp /tmp/3/apply_noobs_os_config /tmp/2/etc/init.d
+#cp /tmp/3/apply_noobs_os_config /tmp/2/etc/init.d
+cp /tmp/3/get_init_stb_config.sh /tmp/2/etc/init.d
+cp /tmp/3/apply_stb_config.service /tmp/2/lib/systemd/system
 
 rm -r /settings/cache/*
 umount /tmp/1
