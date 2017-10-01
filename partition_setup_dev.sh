@@ -2,6 +2,8 @@
 
 set -ex
 
+rm -r /settings/cache/*
+
 if [ -z "$part1" ] || [ -z "$part2" ] || [ -z "$part3" ]; then
   printf "Error: missing environment variable part1 or part2 or part3\n" 1>&2
   exit 1
@@ -40,7 +42,6 @@ fi
 cp /tmp/3/get_init_stb_config.sh /tmp/2/etc/init.d
 cp /tmp/3/apply_stb_config.service /tmp/2/lib/systemd/system
 
-rm -r /settings/cache/*
 umount /tmp/1
 umount /tmp/2
 umount /tmp/3
