@@ -6,8 +6,8 @@
 set -x
 
 # Install ffmpeg package needed by tvheadend
-sudo wget https://github.com/cstinv/stb_pkg/raw/master/ffmpeg_201704201959-git-1_armhf.deb
-sudo dpkg -i ffmpeg_201704201959-git-1_armhf.deb
+sudo wget "https://drive.google.com/uc?export=download&id=1zrREkKtiVRzQK00DDW3Z9DwOK-zKyC2A" -O ffmpeg_201711051658-git-1_armhf.deb
+sudo dpkg -i ffmpeg_201711051658-git-1_armhf.deb
 sudo apt-get -y install -f
 sudo apt-get -y install zvbi
 
@@ -17,8 +17,8 @@ sudo debconf-set-selections ./tvheadend.seed
 
 # Install tvheadend software
 cd /home/pi
-sudo wget https://github.com/cstinv/stbdev/raw/master/tvheadend/tvheadend_4.1-2483~gff5dfd4_armhf.deb
-sudo dpkg -i tvheadend_4.1-2483~gff5dfd4_armhf.deb
+sudo wget "https://drive.google.com/uc?export=download&id=1VD8ai9IcjUj_ec8wol_w5mirAGXU0Cgu" -O tvheadend_4.2.3-100~g13d75a4b1_armhf.deb
+sudo dpkg -i tvheadend_4.2.3-100~g13d75a4b1_armhf.deb
 sudo apt-get -y install -f
 
 # Get the needed firmware
