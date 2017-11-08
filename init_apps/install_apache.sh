@@ -6,7 +6,7 @@
 set -x
 
 # Install apache web server
-sudo apt-get install apache2
+sudo apt-get -y install apache2
 
 # Allow cross-domain access
 sudo a2enmod headers
