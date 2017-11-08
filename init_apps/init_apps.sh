@@ -33,4 +33,11 @@ echo "    . ~/.bash_stb_defs" >> .bashrc
 echo "fi" >> .bashrc
 echo "" >> .bashrc
 
+# Install apache
+log_daemon_msg "STBDEV: Installing apache web server"
+cd /home/pi
+sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_apache.sh
+sudo chmod 774 install_apache.sh
+. /home/pi/install_apache.sh
+
 

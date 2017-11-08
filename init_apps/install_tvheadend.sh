@@ -17,8 +17,8 @@ sudo debconf-set-selections ./tvheadend.seed
 
 # Install tvheadend software
 cd /home/pi
-sudo wget "https://drive.google.com/uc?export=download&id=1VD8ai9IcjUj_ec8wol_w5mirAGXU0Cgu" -O tvheadend_4.2.3-100~g13d75a4b1_armhf.deb
-sudo dpkg -i tvheadend_4.2.3-100~g13d75a4b1_armhf.deb
+sudo wget "https://drive.google.com/uc?export=download&id=1v1Dn8_688tVV9RMcdRY3Hd9sqzTWK28d" -O tvheadend_4.2.4-30~gf3dc1f302_armhf.deb
+sudo dpkg -i tvheadend_4.2.4-30~gf3dc1f302_armhf.deb
 sudo apt-get -y install -f
 
 # Get the needed firmware
