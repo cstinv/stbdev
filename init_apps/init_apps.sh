@@ -41,4 +41,12 @@ sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/000-default.inse
 sudo chmod 774 install_apache.sh
 . /home/pi/install_apache.sh
 
+# Install kiosk
+log_daemon_msg "STBDEV: Installing kiosk mode"
+cd /home/pi
+sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_kiosk.sh
+sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/lightdm.insert
+sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/autostart
+sudo chmod 774 install_kiosk.sh
+. /home/pi/install_kiosk.sh
 
