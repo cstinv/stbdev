@@ -15,6 +15,6 @@ sudo apt-get -y install sudo xorg chromium-browser openbox lightdm
 sudo sed -i '/# Seat configuration/ r lightdm.insert' /etc/lightdm/lightdm.conf
 
 # Create the openbox config directory for kiosk-user if it does not exist.
-mkdir -p /home/aionkiosk/.config/openbox
+sudo mkdir -p /home/aionkiosk/.config/openbox
 sudo mv autostart /home/aionkiosk/.config/openbox/autostart
 
