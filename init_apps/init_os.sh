@@ -10,8 +10,8 @@ sudo rm /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
 
 # Add sources to /etc/apt/sources.list (for kodi)
-sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/jessie/main/binary /' >> /etc/apt/sources.list"
-sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/jessie/armv7/binary /' >> /etc/apt/sources.list"
+#deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi
+sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/stretch/main/binary /' >> /etc/apt/sources.list"
 
 # Get the key for the sources (for kodi)
 wget -O - http://pipplware.pplware.pt/pipplware/key.asc | sudo apt-key add -
