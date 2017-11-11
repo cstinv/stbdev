@@ -41,6 +41,27 @@
                 "http://downloads.raspberrypi.org/raspbian_lite/root.tar.xz",
                 "https://raw.githubusercontent.com/cstinv/stbdev/master/home.tar.xz"
             ]
-        }
+        },
+        {
+            "description": "A port of Debian jessie for the Raspberry Pi (minimal version)",
+            "feature_level": 35120124,
+            "icon": "http://downloads.raspberrypi.org/raspbian_lite/Raspbian_Lite.png",
+            "marketing_info": "http://downloads.raspberrypi.org/raspbian_lite/marketing.tar",
+            "nominal_size": 2236,
+            "os_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/os_lite.json",
+            "os_name": "Raspbian Lite",
+            "partition_setup": "https://raw.githubusercontent.com/cstinv/stbdev/master/partition_setup_dev.sh",
+            "partitions_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/partitions_dev_lite.json",
+            "release_date": "2017-04-17",
+            "supported_hex_revisions": "2,3,4,5,6,7,8,9,d,e,f,10,11,12,14,19,1040,1041,0092,2082",
+            "supported_models": [
+                "Pi 3"
+            ],
+            "tarballs": [
+                "https://downloads.raspberrypi.org/raspbian_lite/archive/2017-04-10-18:47/boot.tar.xz",
+                "https://downloads.raspberrypi.org/raspbian_lite/archive/2017-04-10-18:47/root.tar.xz",
+                "https://raw.githubusercontent.com/cstinv/stbdev/master/home.tar.xz"
+            ]
+         }
     ]
 }
