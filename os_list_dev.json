@@ -1,7 +1,7 @@
 {
     "os_list": [
         {
-            "description": "A port of Debian Stretch for the Raspberry Pi (full desktop version)",
+            "description": "A port of Debian Stretch for the Raspberry Pi (fully desktop version)",
             "feature_level": 35120124,
             "icon": "http://downloads.raspberrypi.org/raspbian/Raspbian.png",
             "marketing_info": "http://downloads.raspberrypi.org/raspbian/marketing.tar",
@@ -28,7 +28,7 @@
             "marketing_info": "http://downloads.raspberrypi.org/raspbian_lite/marketing.tar",
             "nominal_size": 2236,
             "os_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/os_lite_jessie.json",
-            "os_name": "Raspbian Lite",
+            "os_name": "Raspbian LiteJ",
             "partition_setup": "https://raw.githubusercontent.com/cstinv/stbdev/master/partition_setup_dev.sh",
             "partitions_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/partitions_dev_lite.json",
             "release_date": "2017-04-17",
@@ -37,8 +37,8 @@
                 "Pi 3"
             ],
             "tarballs": [
-                "https://downloads.raspberrypi.org/raspbian_lite/archive/2017-04-10-18:47/boot.tar.xz",
-                "https://downloads.raspberrypi.org/raspbian_lite/archive/2017-04-10-18:47/root.tar.xz",
+                "https://github.com/cstinv/raspbian/releases/download/1.0/boot.tar.xz",
+                "https://github.com/cstinv/raspbian/releases/download/1.0/root.tar.xz",
                 "https://raw.githubusercontent.com/cstinv/stbdev/master/home.tar.xz"
             ]
         },
