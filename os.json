@@ -1,5 +1,5 @@
 {
-    "description": "A port of Debian Stretch for the Raspberry Pi (full desktop version)",
+    "description": "A port of Debian Stretch for the Raspberry Pi (fully desktop version)",
     "feature_level": 35120124,
     "kernel": "4.9",
     "name": "Raspbian",
