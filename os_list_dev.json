@@ -48,7 +48,7 @@
             "icon": "http://downloads.raspberrypi.org/raspbian_lite/Raspbian_Lite.png",
             "marketing_info": "http://downloads.raspberrypi.org/raspbian_lite/marketing.tar",
             "nominal_size": 2236,
-            "os_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/os_lite.json",
+            "os_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/os_lite_jessie.json",
             "os_name": "Raspbian Lite",
             "partition_setup": "https://raw.githubusercontent.com/cstinv/stbdev/master/partition_setup_dev.sh",
             "partitions_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/partitions_dev_lite.json",
