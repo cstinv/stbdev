@@ -30,7 +30,7 @@
             "os_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/os_lite_jessie.json",
             "os_name": "Raspbian Lite Jessie",
             "partition_setup": "https://raw.githubusercontent.com/cstinv/stbdev/master/partition_setup_dev_jessie.sh",
-            "partitions_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/partitions_dev_lite.json",
+            "partitions_info": "https://raw.githubusercontent.com/cstinv/stbdev/master/partitions_dev_lite_jessie.json",
             "release_date": "2017-04-17",
             "supported_hex_revisions": "2,3,4,5,6,7,8,9,d,e,f,10,11,12,14,19,1040,1041,0092,2082",
             "supported_models": [

@@ -9,9 +9,13 @@ set -x
 sudo rm /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
 
+# Change repository
+sudo sed -i -- 's/http:\/\/mirrordirector.raspbian.org\/raspbian\//http:\/\/mirrors.ocf.berkeley.edu\/raspbian\/raspbian\//g' /etc/apt/sources.list
+
 # Add sources to /etc/apt/sources.list (for kodi)
 #deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi
-sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/stretch/main/binary /' >> /etc/apt/sources.list"
+# Below line dropped 11.11.2017 to test if needed
+#sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/stretch/main/binary /' >> /etc/apt/sources.list"
 
 # Get the key for the sources (for kodi)
 wget -O - http://pipplware.pplware.pt/pipplware/key.asc | sudo apt-key add -
