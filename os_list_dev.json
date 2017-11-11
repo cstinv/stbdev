@@ -39,7 +39,7 @@
             "tarballs": [
                 "https://github.com/cstinv/raspbian/releases/download/1.0/boot.tar.xz",
                 "https://github.com/cstinv/raspbian/releases/download/1.0/root.tar.xz",
-                "https://raw.githubusercontent.com/cstinv/stbdev/master/home.tar.xz"
+                "https://raw.githubusercontent.com/cstinv/stbdev/master/home_jessie.tar.xz"
             ]
         },
         {
