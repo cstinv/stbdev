@@ -42,7 +42,7 @@ sudo ln -fs /lib/systemd/system/getty@.service /etc/systemd/system/getty.target.
 cat > autologin.conf << EOF
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin $SUDO_USER --noclear %I $TERM
+ExecStart=-/sbin/agetty --autologin pi --noclear %I xterm
 EOF
 sudo chown root:root autologin.conf
 sudo chmod 755 autologin.conf
