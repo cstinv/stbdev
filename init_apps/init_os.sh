@@ -48,6 +48,14 @@ sudo chown root:root autologin.conf
 sudo chmod 755 autologin.conf
 sudo mv autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf
 
+# Install needed wayland libraries for graphics acceleration
+sudo apt-get install libva-wayland1
+sudo apt-get install libwayland-cursor0
+sudo apt-get install libwayland-egl1-mesa
+
+# Add definition of gpu memory if not already included
+sudo sh -c "grep -q 'gpu_mem' /boot/config.txt || (echo "#GPU definition to get smooth video" >> /boot/config.txt && echo "gpu_mem=192" >> /boot/config.txt)"
+
 # Get script to init the apps for STB
 log_daemon_msg "STBDEV: Get script for initializing STB apps"
 cd /home/pi/initstb
