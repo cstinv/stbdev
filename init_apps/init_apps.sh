@@ -7,17 +7,17 @@ set -x
 
 # Install tvheadend
 log_daemon_msg "STBDEV: Installing tvheadend on the STB"
-cd /home/pi
+cd /home/pi/initstb
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_tvheadend.sh
 sudo chmod 774 install_tvheadend.sh
-. /home/pi/install_tvheadend.sh
+. /home/pi/initstb/install_tvheadend.sh
 
 # Install DVB tools
 log_daemon_msg "STBDEV: Installing DVB tools on the STB"
-cd /home/pi
+cd /home/pi/initstb
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_dvb_tools.sh
 sudo chmod 774 install_dvb_tools.sh
-. /home/pi/install_dvb_tools.sh
+. /home/pi/initstb/install_dvb_tools.sh
 
 # Install setup bash commands
 log_daemon_msg "STBDEV: Installing bash setup commands"
@@ -35,18 +35,18 @@ echo "" >> .bashrc
 
 # Install apache
 log_daemon_msg "STBDEV: Installing apache web server"
-cd /home/pi
+cd /home/pi/initstb
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_apache.sh
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/000-default.insert
 sudo chmod 774 install_apache.sh
-. /home/pi/install_apache.sh
+. /home/pi/initstb/install_apache.sh
 
 # Install kiosk
 log_daemon_msg "STBDEV: Installing kiosk mode"
-cd /home/pi
+cd /home/pi/initstb
 sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/install_kiosk.sh
-sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/lightdm.insert
-sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/autostart
-sudo chmod 774 install_kiosk.sh
-. /home/pi/install_kiosk.sh
+#sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/lightdm.insert
+#sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/autostart
+#sudo chmod 774 install_kiosk.sh
+. /home/pi/initstb/install_kiosk.sh
 
