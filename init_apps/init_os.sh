@@ -10,7 +10,7 @@ sudo rm /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
 
 # Change repository
-sudo sed -i -- 's/http:\/\/mirrordirector.raspbian.org\/raspbian\//http:\/\/mirrors.ocf.berkeley.edu\/raspbian\/raspbian\//g' /etc/apt/sources.list
+#sudo sed -i -- 's/http:\/\/mirrordirector.raspbian.org\/raspbian\//http:\/\/mirrors.ocf.berkeley.edu\/raspbian\/raspbian\//g' /etc/apt/sources.list
 
 # Add sources to /etc/apt/sources.list (for kodi)
 #deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi
@@ -18,7 +18,7 @@ sudo sed -i -- 's/http:\/\/mirrordirector.raspbian.org\/raspbian\//http:\/\/mirr
 #sudo sh -c "echo 'deb http://pipplware.pplware.pt/pipplware/dists/stretch/main/binary /' >> /etc/apt/sources.list"
 
 # Get the key for the sources (for kodi)
-wget -O - http://pipplware.pplware.pt/pipplware/key.asc | sudo apt-key add -
+#wget -O - http://pipplware.pplware.pt/pipplware/key.asc | sudo apt-key add -
 
 # Get the key for tvheadend
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61 
@@ -32,6 +32,15 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D
 sudo rpi-update
 sudo apt-get -y update 
 sudo apt-get -y dist-upgrade
+
+# Add autologin user (to pi)
+systemctl set-default multi-user.target
+ln -fs /lib/systemd/system/getty@.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+cat > /etc/systemd/system/getty@tty1.service.d/autologin.conf << EOF
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin $SUDO_USER --noclear %I $TERM
+EOF
 
 
 # Get script to init the apps for STB
