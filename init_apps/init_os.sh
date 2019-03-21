@@ -34,9 +34,9 @@ sudo apt-get -y update
 sudo apt-get -y dist-upgrade
 
 # Add autologin user (to pi)
-systemctl set-default multi-user.target
-ln -fs /lib/systemd/system/getty@.service /etc/systemd/system/getty.target.wants/getty@tty1.service
-cat > /etc/systemd/system/getty@tty1.service.d/autologin.conf << EOF
+sudo systemctl set-default multi-user.target
+sudo ln -fs /lib/systemd/system/getty@.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+sudo cat > /etc/systemd/system/getty@tty1.service.d/autologin.conf << EOF
 [Service]
 ExecStart=
 ExecStart=-/sbin/agetty --autologin $SUDO_USER --noclear %I $TERM
