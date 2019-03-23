@@ -6,7 +6,7 @@
 set -x
 
 # Install required packages
-sudo apt-get install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox chromium-browser
+sudo apt-get -y install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox chromium-browser
 
 # Configure openbox
 cd /home/pi/initstb
