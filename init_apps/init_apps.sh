@@ -41,6 +41,16 @@ sudo wget https://github.com/cstinv/stbdev/raw/master/init_apps/000-default.inse
 sudo chmod 774 install_apache.sh
 . /home/pi/initstb/install_apache.sh
 
+# Install h264ify extension for chrome 
+# Refer to browser_chrome_install_extension.txt
+sudo mkdir /usr/share/chromium
+sudo mkdir /usr/share/chromium/extensions
+cd /home/pi/initstb
+sudo wget https://github.com/cstinv/stbdev/raw/master/3rdparty/h264ify_v1.0.9.crx
+sudo mv h264ify_v1.0.9.crx /usr/share/chromium/extensions
+sudo wget https://github.com/cstinv/stbdev/raw/master/3rdparty/aleakchihdccplidncghkekgioiakgal.json
+sudo mv aleakchihdccplidncghkekgioiakgal.json /usr/share/chromium/extensions
+
 # Install kiosk
 log_daemon_msg "STBDEV: Installing kiosk mode"
 cd /home/pi/initstb
