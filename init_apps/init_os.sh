@@ -29,7 +29,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D
 #echo "deb https://dl.bintray.com/tvheadend/deb jessie release" | sudo tee -a /etc/apt/sources.list
 
 # Update raspberry firmware and software libraries
-sudo rpi-update
+sudo SKIP_WARNING=1 rpi-update
 sudo apt-get -y update 
 sudo apt-get -y dist-upgrade
 
@@ -49,20 +49,20 @@ sudo chmod 755 autologin.conf
 sudo mv autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf
 
 # Install needed wayland libraries for graphics acceleration
-sudo apt-get install libva-wayland1
-sudo apt-get install libwayland-cursor0
-sudo apt-get install libwayland-egl1-mesa
+sudo apt-get -y install libva-wayland1
+sudo apt-get -y install libwayland-cursor0
+sudo apt-get -y install libwayland-egl1-mesa
 
 # Add definition of gpu memory if not already included
-sudo sh -c "grep -q 'gpu_mem' /boot/config.txt || (echo "#GPU definition to get smooth video" >> /boot/config.txt && echo "gpu_mem=192" >> /boot/config.txt)"
+sudo sh -c "grep -q 'gpu_mem' /boot/config.txt || (echo '#GPU definition to get smooth video' >> /boot/config.txt && echo 'gpu_mem=192' >> /boot/config.txt)"
 
 # Get script to init the apps for STB
 log_daemon_msg "STBDEV: Get script for initializing STB apps"
-cd /home/pi/initstb
+cd /home/pi
 sudo wget --no-check-certificate https://github.com/cstinv/stbdev/raw/master/init_apps/init_apps.sh
 sudo chmod 774 init_apps.sh
 sudo chown pi:pi init_apps.sh
-echo 'Reboot the raspberry and run initstb/init_apps.sh!!!'
+echo 'Reboot the raspberry and run init_apps.sh!!!'
 
 
 
